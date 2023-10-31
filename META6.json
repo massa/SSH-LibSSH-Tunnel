@@ -1,0 +1,25 @@
+{
+  "auth": "zef:massa",
+  "authors": [
+    "Humberto Massa"
+  ],
+  "build-depends": [
+  ],
+  "depends": [
+  ],
+  "description": "blah blah blah",
+  "license": "Artistic-2.0",
+  "name": "SSH::LibSSH::Tunnel",
+  "perl": "6.d",
+  "provides": {
+    "SSH::LibSSH::Tunnel": "lib/SSH/LibSSH/Tunnel.rakumod"
+  },
+  "resources": [
+  ],
+  "source-url": "",
+  "tags": [
+  ],
+  "test-depends": [
+  ],
+  "version": "0.0.1"
+}

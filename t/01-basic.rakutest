@@ -1,0 +1,9 @@
+use Test;
+use Test::META;
+
+plan 2;
+
+meta-ok;
+use-ok 'SSH::LibSSH::Tunnel';
+
+done-testing;
