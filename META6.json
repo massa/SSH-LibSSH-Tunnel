@@ -4,8 +4,13 @@
     "Humberto Massa"
   ],
   "build-depends": [
+    "Test::META"
   ],
   "depends": [
+    "SSH::LibSSH",
+    "App::Rak::Complete",
+    "DBIish",
+    "Dan::Polars"
   ],
   "description": "blah blah blah",
   "license": "Artistic-2.0",
