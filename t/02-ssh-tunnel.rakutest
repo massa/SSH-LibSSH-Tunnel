@@ -1,0 +1,19 @@
+use Testo;
+
+plan 1;
+is '', '';
+done-testing;
+
+exit;
+
+my $http = Proc::Async.new: <python -m http.server>;
+QUIT { $http.kill }
+
+use SSH::LibSSH::Tunnel;
+
+my $x = SSH::LibSSH::Tunnel.new(:tunnel-host<127.0.0.1>, :tunnel-user«$*USER», private-key-file => $*HOME.add('.ssh/id_dsa'), :remote-host<127.0.0.1>, :remote-port(8000)).connect;
+
+my $p = run «/bin/echo nc {$x.local-host} {$x.local-port}», :in, :out;
+$p.in.print: "GET / HTTP/1.1\r\nHost: host:port\r\nConnection: close\r\n\r\n";
+warn $p.out.slurp;
+

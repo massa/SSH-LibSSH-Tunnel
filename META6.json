@@ -4,6 +4,7 @@
     "Humberto Massa"
   ],
   "build-depends": [
+    "Testo",
     "Test::META"
   ],
   "depends": [
@@ -12,7 +13,7 @@
     "DBIish",
     "Dan::Polars"
   ],
-  "description": "blah blah blah",
+  "description": "establish remote forwarding SSH tunnel",
   "license": "Artistic-2.0",
   "name": "SSH::LibSSH::Tunnel",
   "perl": "6.d",

@@ -1,6 +1,7 @@
 Revision history for SSH-LibSSH-Tunnel
 
 {{$NEXT}}
+    - Documentation, tests, etc
 
 0.0.1  2024-02-26T11:43:28-03:00
     - Initial version

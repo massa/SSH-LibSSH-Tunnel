@@ -3,19 +3,71 @@
 NAME
 ====
 
-SSH::LibSSH::Tunnel - blah blah blah
+SSH::LibSSH::Tunnel - establish remote forwarding SSH tunnel
 
 SYNOPSIS
 ========
 
 ```raku
 use SSH::LibSSH::Tunnel;
+
+my SSH::LibSSH::Tunnel:D $ssh-tunnel .= new: :tunnel-host<intermediary>, :tunnel-user<useratintermediary>,
+  :local-host<127.0.0.1>, :local-port<33333>, # zero local-port means "let the OS choose"
+  :remote-host<finaldestination>, :remote-port<3306>, :private-key-file($*HOME.add: '.ssh/some_key');
+my $connection = $ssh-tunnel.connect;
+# at this point, the tunnel is already connected
 ```
 
 DESCRIPTION
 ===========
 
 SSH::LibSSH::Tunnel is a library (based on SSH::LibSSH) to simplify the setup of forwarding SSH tunnels.
+
+FIELDS
+======
+
+### has Str $.local-host
+
+address that will listen locally for the tunnel
+
+### has Int(Any) $.local-port
+
+port that will listen locally for the tunnel
+
+### has Str $.tunnel-host
+
+intermediary host (will connect on it via ssh)
+
+### has Int(Any) $.tunnel-port
+
+intermediary SSH service port
+
+### has Str $.tunnel-user
+
+SSH user on the intermediary host
+
+### has IO(Any) $.private-key-file
+
+SSH private key file for connection (no password, for now)
+
+### has Str $.remote-host
+
+destination tunnel host
+
+### has Int(Any) $.remote-port
+
+destination tunnel port
+
+METHOD
+======
+
+### method connect
+
+```raku
+method connect() returns SSH::LibSSH::Tunnel
+```
+
+Establish the connection, synchronously. Returns self.
 
 AUTHOR
 ======
