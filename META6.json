@@ -8,10 +8,7 @@
     "Test::META"
   ],
   "depends": [
-    "SSH::LibSSH",
-    "App::Rak::Complete",
-    "DBIish",
-    "Dan::Polars"
+    "SSH::LibSSH"
   ],
   "description": "establish remote forwarding SSH tunnel",
   "license": "Artistic-2.0",
