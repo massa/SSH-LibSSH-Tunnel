@@ -1,6 +1,8 @@
 Revision history for SSH-LibSSH-Tunnel
 
 {{$NEXT}}
+
+0.0.4  2024-02-28T06:04:39-03:00
     - It was test-depends, not build-depends
 
 0.0.3  2024-02-26T21:38:20-03:00
