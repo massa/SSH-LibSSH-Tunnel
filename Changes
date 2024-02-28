@@ -1,6 +1,7 @@
 Revision history for SSH-LibSSH-Tunnel
 
 {{$NEXT}}
+    - It was test-depends, not build-depends
 
 0.0.3  2024-02-26T21:38:20-03:00
     - Fixing META6.json

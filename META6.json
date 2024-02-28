@@ -4,8 +4,6 @@
     "Humberto Massa"
   ],
   "build-depends": [
-    "Testo",
-    "Test::META"
   ],
   "depends": [
     "SSH::LibSSH"
@@ -23,6 +21,8 @@
   "tags": [
   ],
   "test-depends": [
+    "Testo",
+    "Test::META"
   ],
   "version": "0.0.3"
 }
