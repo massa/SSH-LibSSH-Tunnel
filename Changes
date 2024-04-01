@@ -1,6 +1,7 @@
 Revision history for SSH-LibSSH-Tunnel
 
 {{$NEXT}}
+    - Defensively set port to 0
 
 0.0.4  2024-02-28T06:04:39-03:00
     - It was test-depends, not build-depends

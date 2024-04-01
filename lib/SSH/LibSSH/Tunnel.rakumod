@@ -57,7 +57,7 @@ has Int() $.remote-port is required;
 #| Establish the connection, synchronously. Returns self.
 method connect(--> SSH::LibSSH::Tunnel) {
   my Promise $tunnel-server .= new;
-  my $remote-connection = await SSH::LibSSH.connect: host => $.tunnel-host, port => $.tunnel-port,
+  my $remote-connection = await SSH::LibSSH.connect: host => $.tunnel-host, :port($.tunnel-port//0),
     user => $.tunnel-user, private-key => $.private-key-file;
   start {
     react {
