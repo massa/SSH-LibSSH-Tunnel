@@ -1,6 +1,8 @@
 Revision history for SSH-LibSSH-Tunnel
 
 {{$NEXT}}
+
+0.0.5  2024-04-01T12:04:22-03:00
     - Defensively set port to 0
 
 0.0.4  2024-02-28T06:04:39-03:00
