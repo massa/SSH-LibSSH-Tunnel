@@ -47,6 +47,8 @@ has IO() $.private-key-file is required;
 has Str $.remote-host is required;
 #| destination tunnel port
 has Int() $.remote-port is required;
+#| destination tunnel port
+has Int() $.timeout = 30;
 
 =begin pod
 
@@ -57,8 +59,8 @@ has Int() $.remote-port is required;
 #| Establish the connection, synchronously. Returns self.
 method connect(--> SSH::LibSSH::Tunnel) {
   my Promise $tunnel-server .= new;
-  my $remote-connection = await SSH::LibSSH.connect: host => $.tunnel-host, :port($.tunnel-port//0),
-    user => $.tunnel-user, private-key => $.private-key-file;
+  my $remote-connection = await SSH::LibSSH.connect: host => $!tunnel-host, port => $!tunnel-port,
+    user => $!tunnel-user, private-key => $!private-key-file, timeout => $!timeout;
   start {
     react {
       $tunnel-server.keep: do
