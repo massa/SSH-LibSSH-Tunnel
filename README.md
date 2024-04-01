@@ -58,6 +58,10 @@ destination tunnel host
 
 destination tunnel port
 
+### has Int(Any) $.timeout
+
+destination tunnel port
+
 METHOD
 ======
 
