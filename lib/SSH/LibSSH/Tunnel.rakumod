@@ -12,11 +12,18 @@ SSH::LibSSH::Tunnel - establish remote forwarding SSH tunnel
 
 use SSH::LibSSH::Tunnel;
 
-my SSH::LibSSH::Tunnel:D $ssh-tunnel .= new: :tunnel-host<intermediary>, :tunnel-user<useratintermediary>,
-  :local-host<127.0.0.1>, :local-port<33333>, # zero local-port means "let the OS choose"
-  :remote-host<finaldestination>, :remote-port<3306>, :private-key-file($*HOME.add: '.ssh/some_key');
+my SSH::LibSSH::Tunnel:D $ssh-tunnel .= new: :tunnel-host<intermediary>,
+   :tunnel-user<useratintermediary>,
+   :tunnel-port(22), # default is 22 (ssh)
+   :local-host<127.0.0.1>, # default is 127.0.0.1 (localhost)
+   :local-port<33333>, # default (zero) means "let the OS choose"
+   :remote-host<finaldestination>,
+   :remote-port<3306>,
+   :private-key-file($*HOME.add: '.ssh/some_key'),
+   :timeout(30); # default is 30s -- passed to SSH::LibSSH
 my $connection = $ssh-tunnel.connect;
 # at this point, the tunnel is already connected
+my $port-to-connect = $ssh-tunnel.local-port; # useful if passed the default
 
 =end code
 
