@@ -1,4 +1,4 @@
-[![Actions Status](https://github.com/massa/SSH-LibSSH-Tunnel/actions/workflows/test.yml/badge.svg)](https://github.com/massa/SSH-LibSSH-Tunnel/actions)
+[![Actions Status](https://github.com/massa/SSH-LibSSH-Tunnel/actions/workflows/linux.yml/badge.svg)](https://github.com/massa/SSH-LibSSH-Tunnel/actions) [![Actions Status](https://github.com/massa/SSH-LibSSH-Tunnel/actions/workflows/macos.yml/badge.svg)](https://github.com/massa/SSH-LibSSH-Tunnel/actions) [![Actions Status](https://github.com/massa/SSH-LibSSH-Tunnel/actions/workflows/windows.yml/badge.svg)](https://github.com/massa/SSH-LibSSH-Tunnel/actions)
 
 NAME
 ====
@@ -88,7 +88,7 @@ Humberto Massa <humbertomassa@gmail.com>
 COPYRIGHT AND LICENSE
 =====================
 
-Copyright 2023 - 2024 Humberto Massa
+Copyright © 2023 - 2024 Humberto Massa
 
 This library is free software; you can redistribute it and/or modify it under either the Artistic License 2.0 or the LGPL v3.0, at your convenience.
 
