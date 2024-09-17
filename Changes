@@ -1,6 +1,7 @@
 Revision history for SSH-LibSSH-Tunnel
 
 {{$NEXT}}
+    - Hopefully fixes race condition as described in issue #2
 
 0.0.7  2024-07-02T09:23:15-03:00
     - Better documentation

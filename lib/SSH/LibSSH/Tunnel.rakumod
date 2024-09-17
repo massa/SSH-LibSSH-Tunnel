@@ -70,7 +70,7 @@ method connect(--> SSH::LibSSH::Tunnel) {
     user => $!tunnel-user, private-key => $!private-key-file, timeout => $!timeout;
   start {
     react {
-      $tunnel-server.keep: do
+      my $s = do
         whenever IO::Socket::Async.listen($.local-host, $.local-port) -> IO::Socket::Async:D $connection {
           whenever $remote-connection.forward($.remote-host, $.remote-port, $.local-host, $.local-port) -> $channel {
             whenever $connection.Supply(:bin) {
@@ -86,6 +86,9 @@ method connect(--> SSH::LibSSH::Tunnel) {
             QUIT { $remote-connection.close; .rethrow }
           }
         }
+      whenever $s.socket-port {
+        $tunnel-server.keep: $s
+      }
       whenever signal(SIGINT) {
         QUIT { default { warn .raku } }
         $remote-connection.close;
