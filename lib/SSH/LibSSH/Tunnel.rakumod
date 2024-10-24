@@ -66,13 +66,13 @@ has Int() $.timeout = 30;
 #| Establish the connection, synchronously. Returns self.
 method connect(--> SSH::LibSSH::Tunnel) {
   my Promise $tunnel-server .= new;
-  my $remote-connection = await SSH::LibSSH.connect: host => $!tunnel-host, port => $!tunnel-port,
+  my $remote-connection = await SSH::LibSSH.connect: host => $!tunnel-host, port => $!tunnel-port.Int,
     user => $!tunnel-user, private-key => $!private-key-file, timeout => $!timeout;
   start {
     react {
       my $s = do
-        whenever IO::Socket::Async.listen($.local-host, $.local-port) -> IO::Socket::Async:D $connection {
-          whenever $remote-connection.forward($.remote-host, $.remote-port, $.local-host, $.local-port) -> $channel {
+        whenever IO::Socket::Async.listen($.local-host, $.local-port.Int) -> IO::Socket::Async:D $connection {
+          whenever $remote-connection.forward($.remote-host, $.remote-port.Int, $.local-host, $.local-port.Int) -> $channel {
             whenever $connection.Supply(:bin) {
               $channel.write: $_;
               QUIT { default { warn .raku } }
