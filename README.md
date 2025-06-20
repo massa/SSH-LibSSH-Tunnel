@@ -1,4 +1,4 @@
-[![Actions Status](https://github.com/massa/SSH-LibSSH-Tunnel/actions/workflows/linux.yml/badge.svg)](https://github.com/massa/SSH-LibSSH-Tunnel/actions) [![Actions Status](https://github.com/massa/SSH-LibSSH-Tunnel/actions/workflows/macos.yml/badge.svg)](https://github.com/massa/SSH-LibSSH-Tunnel/actions) [![Actions Status](https://github.com/massa/SSH-LibSSH-Tunnel/actions/workflows/windows.yml/badge.svg)](https://github.com/massa/SSH-LibSSH-Tunnel/actions)
+[![Actions Status](https://github.com/massa/SSH-LibSSH-Tunnel/actions/workflows/linux.yml/badge.svg)](https://github.com/massa/SSH-LibSSH-Tunnel/actions) [![Actions Status](https://github.com/massa/SSH-LibSSH-Tunnel/actions/workflows/macos.yml/badge.svg)](https://github.com/massa/SSH-LibSSH-Tunnel/actions)
 
 NAME
 ====
