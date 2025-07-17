@@ -75,7 +75,9 @@ METHOD
 ### method connect
 
 ```raku
-method connect() returns SSH::LibSSH::Tunnel
+method connect(
+    |c
+) returns SSH::LibSSH::Tunnel
 ```
 
 Establish the connection, synchronously. Returns self.
