@@ -67,7 +67,7 @@ has Int() $.timeout = 30;
 method connect(|c --> SSH::LibSSH::Tunnel) {
   my Promise $tunnel-server .= new;
   my $remote-connection = await SSH::LibSSH.connect: host => $!tunnel-host, port => $!tunnel-port.Int,
-    user => $!tunnel-user, private-key => $!private-key-file, timeout => $!timeout, |c;
+    user => $!tunnel-user, private-key-file => $!private-key-file.Str, timeout => $!timeout, |c;
   start {
     react {
       my $s = do

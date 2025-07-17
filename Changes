@@ -1,6 +1,7 @@
 Revision history for SSH-LibSSH-Tunnel
 
 {{$NEXT}}
+    - Fix `connect` parameter name and type
 
 0.0.10  2025-07-17T10:25:17-03:00
     - Yet another try to fix (and understand) github CI
